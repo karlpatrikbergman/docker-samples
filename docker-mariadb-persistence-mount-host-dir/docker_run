@@ -1,0 +1,19 @@
+#!/bin/bash
+
+CONTAINER="alarmservice_db_container"
+IMAGE="mariadb:latest"
+
+docker stop ${CONTAINER}
+docker rm ${CONTAINER}
+#docker_clean_up.sh
+
+docker run -d \
+    --name ${CONTAINER} \
+    -e MYSQL_USER=mysql \
+    -e MYSQL_PASSWORD=mysql \
+    -e MYSQL_DATABASE=alarmservicedb \
+    -e MYSQL_ROOT_PASSWORD=supersecret \
+    -v ~/mariadb/alarmservicedb/data:/var/lib/mysql \
+    -p 3301:3306 ${IMAGE}
+
+docker exec -it ${CONTAINER} bash  

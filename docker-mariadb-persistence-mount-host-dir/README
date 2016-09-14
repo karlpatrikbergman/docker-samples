@@ -1,0 +1,12 @@
+This is a lab based on a tutorial by Arun Gupta that can be found here:
+http://blog.arungupta.me/docker-mysql-persistence/
+
+In the file docker_run it is line 11:
+v ~/mariadb/alarmservicedb/data:/var/lib/mysql \
+
+that makes mariadb data persistent between containers 
+(not only start/stop)
+
+IMPORTANT NOTICE!
+This solution is not very portable. See next example using data-only
+containers
