@@ -1,11 +1,11 @@
 #!/bin/bash
+# Creates a container for mariadb and mounts it to
+# a volume on the docker host
+# This method is less flexible than mounting to an
+# explicit data container
 
 CONTAINER="alarmservice_db_container"
 IMAGE="mariadb:latest"
-
-docker stop ${CONTAINER}
-docker rm ${CONTAINER}
-#docker_clean_up.sh
 
 docker run -d \
     --name ${CONTAINER} \
@@ -15,5 +15,3 @@ docker run -d \
     -e MYSQL_ROOT_PASSWORD=supersecret \
     -v ~/mariadb/alarmservicedb/data:/var/lib/mysql \
     -p 3301:3306 ${IMAGE}
-
-docker exec -it ${CONTAINER} bash  
