@@ -1,0 +1,9 @@
+ I was assuming that you could just override "entrypoint" of a  Dockerimage 
+ using 
+ --entrypoint ./wait-for-it-sh 
+ 
+ and that the original command of  the Dockerimage was going to be passed 
+ along automatically to the wrapper-script as the last argument.
+
+This assumtion was wrong it seems. You need to pass the command for running
+ the application explicitly to the wait-for-it.sh script.

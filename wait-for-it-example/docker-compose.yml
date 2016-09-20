@@ -1,0 +1,6 @@
+version: "2"
+services:
+    hello_app:
+        build: .
+        entrypoint: ./wait-for-it.sh
+        command: localhost 80 ./app.sh Patrik
