@@ -1,0 +1,8 @@
+version: "2"
+services:
+  node_web_app:
+    build: .
+    image: node_web_app_img
+    container_name: node_web_app
+    ports:
+        - 49160:8080 #<port-on-host>:<port-on-container>
