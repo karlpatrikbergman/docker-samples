@@ -1,0 +1,9 @@
+I am confused about the order for the -p flag
+According to this page
+https://docs.docker.com/v1.8/userguide/dockerlinks/
+
+it should be
+docker run -p <host-port>:<container-port>
+
+meaning whatever is running on <container-port> will be available
+on <host-port>
